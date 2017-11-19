@@ -216,4 +216,20 @@ protected override void Dispose(bool disposing)
 
 ### Create Project
 1. new Project > ASP.NET Web Application 
-2. rename "DemoApiEmployee 
+2. rename "DemoApiEmployee"
+3. ok.
+
+### Model
+> add new item
+1. select Data
+2. ADO.NET Entity Data Model > rename "EmployeeContext"
+3. select `code first from database`
+4. next > new Connection...
+5. data source `Microsoft SQL Server`
+6. Server Name `(localdb)\MSSQLLocalDB` > refresh
+7. Select or Enter a database name `DemoMVCWeb.EmployeeContext`
+8. Test Connection
+9. Ok.
+10. check box select > "Save connection settings in Web.Config as "EmployeeContext"
+11. select table "Employees"
+12. Finish > rebuild
