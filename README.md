@@ -132,8 +132,10 @@ public class Employee
 - Views/Employee/Index.cshtml
 
 ### Method
+<mark> methods </mark>
 > `include` คือจะเลือกรับเฉพาะ ข้อมูลที่กำหนดเท่านั้น
 > `[ValidateAntiForgeryToken]` ตรวจสอบ token
+> `[ActionName("")]` เปลี่ยนชื่อ  
 > `ModelState.IsValid` ตรวจสอบชนิดข้อมูล ที่รับเข้ามา
 ```c#
     // POST: Employee/Create
@@ -152,6 +154,28 @@ public class Employee
 
         return View(employee);
     }
+
+    // POST: Employee/Delete/5
+    [HttpPost, ActionName("Delete")]
+    [ValidateAntiForgeryToken]
+    public ActionResult DeleteConfirmed(int id)
+    {
+        Employee employee = db.Employees.Find(id);
+        db.Employees.Remove(employee);
+        db.SaveChanges();
+        return RedirectToAction("Index");
+    }
+```
+<mark> การบังคับปิด ค่าตัวแปร ที่ใช้ ในที่นี้บังคับปิด</mark> `db` 
+```c#
+protected override void Dispose(bool disposing)
+{
+    if (disposing)
+    {
+        db.Dispose(); 
+    }
+    base.Dispose(disposing);
+}
 ```
 
 ### view
