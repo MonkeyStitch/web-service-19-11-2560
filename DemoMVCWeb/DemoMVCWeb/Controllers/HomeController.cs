@@ -26,5 +26,16 @@ namespace DemoMVCWeb.Controllers
 
             return View();
         }
+
+        public string ShowMessage()
+        {
+            return "Hello MCV Web Application";
+        }
+
+        public ActionResult Hello(string msg)
+        {
+            ViewBag.Message = "Hello : " + msg; // dinamic property คือการจับข้อมูลลงถังกลาง โดยโยน message
+            return View();
+        }
     }
 }
