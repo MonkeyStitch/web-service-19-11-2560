@@ -233,3 +233,17 @@ protected override void Dispose(bool disposing)
 10. check box select > "Save connection settings in Web.Config as "EmployeeContext"
 11. select table "Employees"
 12. Finish > rebuild
+
+### Controller
+> add Controller
+1. click right `Controllers` folder 
+2. add > Controller
+3. select `Web API 2 Controller with views, using Entity Framework` 
+4. click Add
+5. select Model Class `Employee (DemoMVCWeb.Models)` <mark>*ต้อง complie หรือ buile project ก่อน</mark>
+6. select Data Context Class `EmployeeContext (DemoMVCWeb)` <mark>*ต้อง complie หรือ buile project ก่อน</mark>
+7. rename Controller name "EmployeeController"
+8. click add
+
+#### result หลังจากสร้าง controller แบบ `Web API 2 Controller with views, using Entity Framework` 
+- Controllers/EmployeeController.cs
